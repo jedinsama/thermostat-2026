@@ -1,28 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'screens/login_screen.dart';
+import 'screens/dashboard_screen.dart'; // We are back to routing straight here
 
-// The main() function is the entry point, just like the _ready() function in a main script.
-void main() {
-  runApp(const ThermostatApp());
+final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.light);
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+
+  runApp(ThermostatApp(isLoggedIn: isLoggedIn));
 }
 
-// StatelessWidget means this root configuration doesn't change dynamically.
 class ThermostatApp extends StatelessWidget {
-  const ThermostatApp({super.key});
+  final bool isLoggedIn;
+  
+  const ThermostatApp({super.key, required this.isLoggedIn});
 
   @override
   Widget build(BuildContext context) {
-    // MaterialApp provides the foundational styling and navigation structure for the whole app.
-    return MaterialApp(
-      title: 'Thermostat',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        useMaterial3: true, // Enables the latest Google Material Design visuals
-      ),
-      // This tells the app to load the LoginScreen immediately upon launching.
-      home: const LoginScreen(), 
-      // Hides the "DEBUG" banner in the top right corner for a cleaner presentation.
-      debugShowCheckedModeBanner: false, 
+    return ValueListenableBuilder<ThemeMode>(
+      valueListenable: themeNotifier,
+      builder: (_, ThemeMode currentMode, __) {
+        return MaterialApp(
+          title: 'Thermostat',
+          theme: ThemeData(
+            brightness: Brightness.light,
+            primarySwatch: Colors.blue,
+            useMaterial3: true,
+            scaffoldBackgroundColor: Colors.white, 
+          ),
+          darkTheme: ThemeData(
+            brightness: Brightness.dark,
+            primarySwatch: Colors.blueGrey,
+            useMaterial3: true,
+            scaffoldBackgroundColor: const Color(0xFF121212), 
+          ),
+          themeMode: currentMode,
+          // Route straight to the Dashboard if they are logged in
+          home: isLoggedIn ? const DashboardScreen() : const LoginScreen(),
+          debugShowCheckedModeBanner: false,
+        );
+      },
     );
   }
 }
