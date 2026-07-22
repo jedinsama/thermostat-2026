@@ -35,9 +35,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   http: ^1.6.0
-  flutter_blue_plus: ^2.3.9
+  flutter_blue_plus: ^2.3.10
   shared_preferences: ^2.5.5
   permission_handler: ^12.0.3
+  fl_chart: ^0.68.0 # NEW: Added for the live telemetry graph
+  geolocator: ^11.0.0      # NEW: For GPS tracking
+  url_launcher: ^6.2.6     # NEW: For triggering the SMS app
+
 
 dev_dependencies:
   flutter_test:
@@ -49,6 +53,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.13.1 # NEW: Auto-icon generator
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -65,7 +70,10 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
-
+  assets:
+    - assets/images/thermostat_icon_label.png
+    - assets/images/thermostat_icon.png
+    - assets/images/hill_parallax.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
@@ -91,3 +99,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/thermostat_icon.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/images/thermostat_icon.png"
