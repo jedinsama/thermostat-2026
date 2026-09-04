@@ -1,0 +1,2974 @@
+{
+ "generated_by": "mlops/verify_dart_parity.py",
+ "contract": "labeling.py <-> risk_rules.dart + feature_window.dart",
+ "scalars": [
+  {
+   "kind": "heat_index",
+   "temp_c": 25,
+   "rh_pct": 40,
+   "heat_index_c": 24.6,
+   "pagasa_class": 0
+  },
+  {
+   "kind": "heat_index",
+   "temp_c": 30,
+   "rh_pct": 60,
+   "heat_index_c": 32.832032,
+   "pagasa_class": 2
+  },
+  {
+   "kind": "heat_index",
+   "temp_c": 32,
+   "rh_pct": 70,
+   "heat_index_c": 40.409274,
+   "pagasa_class": 2
+  },
+  {
+   "kind": "heat_index",
+   "temp_c": 35,
+   "rh_pct": 80,
+   "heat_index_c": 56.546649,
+   "pagasa_class": 4
+  },
+  {
+   "kind": "heat_index",
+   "temp_c": 38,
+   "rh_pct": 75,
+   "heat_index_c": 66.749013,
+   "pagasa_class": 4
+  },
+  {
+   "kind": "heat_index",
+   "temp_c": 41,
+   "rh_pct": 85,
+   "heat_index_c": 94.903913,
+   "pagasa_class": 4
+  },
+  {
+   "kind": "psi",
+   "hr_bpm": 60,
+   "resting_hr": 60,
+   "age_years": 30,
+   "hr_max": 187.0,
+   "psi": 0.0,
+   "psi_class": 0
+  },
+  {
+   "kind": "psi",
+   "hr_bpm": 80,
+   "resting_hr": 60,
+   "age_years": 30,
+   "hr_max": 187.0,
+   "psi": 0.787402,
+   "psi_class": 0
+  },
+  {
+   "kind": "psi",
+   "hr_bpm": 100,
+   "resting_hr": 60,
+   "age_years": 30,
+   "hr_max": 187.0,
+   "psi": 1.574803,
+   "psi_class": 0
+  },
+  {
+   "kind": "psi",
+   "hr_bpm": 130,
+   "resting_hr": 60,
+   "age_years": 30,
+   "hr_max": 187.0,
+   "psi": 2.755906,
+   "psi_class": 0
+  },
+  {
+   "kind": "psi",
+   "hr_bpm": 160,
+   "resting_hr": 60,
+   "age_years": 30,
+   "hr_max": 187.0,
+   "psi": 3.937008,
+   "psi_class": 1
+  },
+  {
+   "kind": "psi",
+   "hr_bpm": 187,
+   "resting_hr": 60,
+   "age_years": 30,
+   "hr_max": 187.0,
+   "psi": 5.0,
+   "psi_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 0
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "healthy",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "elderly",
+   "age_years": 72,
+   "bmi": 24.221453,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 0,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 0
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 0,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 0,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 0,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 0,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 0,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 0,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 0,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 0,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 0,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 1,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 1,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 1,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 1,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 1,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 1,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 1,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 1,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 1,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 1,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 2,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 2,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 2,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 2,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 2,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 2,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 2,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 2,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 2,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 2,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 3,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 3,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 3,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 3,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 3,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 3,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 3,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 3,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 3,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 3,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 4,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 4,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 4,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 4,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 4,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 4,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 4,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 4,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 4,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "cardiovascular",
+   "age_years": 30,
+   "bmi": 24.221453,
+   "cardiovascular": true,
+   "env_class": 4,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 0
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 0,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 1
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 2
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 1,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 3
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 2,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 3,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 0,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 0,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 1,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 1,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 2,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 2,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 3,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 3,
+   "spo2_desat": true,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 4,
+   "spo2_desat": false,
+   "risk_class": 4
+  },
+  {
+   "kind": "fusion",
+   "profile": "obese",
+   "age_years": 30,
+   "bmi": 32.871972,
+   "cardiovascular": false,
+   "env_class": 4,
+   "psi_class": 4,
+   "spo2_desat": true,
+   "risk_class": 4
+  }
+ ],
+ "window": {
+  "samples": [
+   {
+    "t_offset_min": 0,
+    "ambient_temp_c": 30.0,
+    "relative_humidity_pct": 67.0,
+    "heart_rate_bpm": 80.0,
+    "spo2_pct": 98.0
+   },
+   {
+    "t_offset_min": 1,
+    "ambient_temp_c": 30.05,
+    "relative_humidity_pct": 68.0,
+    "heart_rate_bpm": 80.2,
+    "spo2_pct": 97.99
+   },
+   {
+    "t_offset_min": 2,
+    "ambient_temp_c": 30.1,
+    "relative_humidity_pct": 69.0,
+    "heart_rate_bpm": 80.4,
+    "spo2_pct": 97.98
+   },
+   {
+    "t_offset_min": 3,
+    "ambient_temp_c": 30.15,
+    "relative_humidity_pct": 70.0,
+    "heart_rate_bpm": 80.6,
+    "spo2_pct": 97.97
+   },
+   {
+    "t_offset_min": 4,
+    "ambient_temp_c": 30.2,
+    "relative_humidity_pct": 71.0,
+    "heart_rate_bpm": 80.8,
+    "spo2_pct": 97.96
+   },
+   {
+    "t_offset_min": 5,
+    "ambient_temp_c": 30.25,
+    "relative_humidity_pct": 72.0,
+    "heart_rate_bpm": 81.0,
+    "spo2_pct": 97.95
+   },
+   {
+    "t_offset_min": 6,
+    "ambient_temp_c": 30.3,
+    "relative_humidity_pct": 73.0,
+    "heart_rate_bpm": 81.2,
+    "spo2_pct": 97.94
+   },
+   {
+    "t_offset_min": 7,
+    "ambient_temp_c": 30.35,
+    "relative_humidity_pct": 67.0,
+    "heart_rate_bpm": 81.4,
+    "spo2_pct": 97.93
+   },
+   {
+    "t_offset_min": 8,
+    "ambient_temp_c": 30.4,
+    "relative_humidity_pct": 68.0,
+    "heart_rate_bpm": 81.6,
+    "spo2_pct": 97.92
+   },
+   {
+    "t_offset_min": 9,
+    "ambient_temp_c": 30.45,
+    "relative_humidity_pct": 69.0,
+    "heart_rate_bpm": 81.8,
+    "spo2_pct": 97.91
+   },
+   {
+    "t_offset_min": 10,
+    "ambient_temp_c": 30.5,
+    "relative_humidity_pct": 70.0,
+    "heart_rate_bpm": 82.0,
+    "spo2_pct": 97.9
+   },
+   {
+    "t_offset_min": 11,
+    "ambient_temp_c": 30.55,
+    "relative_humidity_pct": 71.0,
+    "heart_rate_bpm": 82.2,
+    "spo2_pct": 97.89
+   },
+   {
+    "t_offset_min": 12,
+    "ambient_temp_c": 30.6,
+    "relative_humidity_pct": 72.0,
+    "heart_rate_bpm": 82.4,
+    "spo2_pct": 97.88
+   },
+   {
+    "t_offset_min": 13,
+    "ambient_temp_c": 30.65,
+    "relative_humidity_pct": 73.0,
+    "heart_rate_bpm": 82.6,
+    "spo2_pct": 97.87
+   },
+   {
+    "t_offset_min": 14,
+    "ambient_temp_c": 30.7,
+    "relative_humidity_pct": 67.0,
+    "heart_rate_bpm": 82.8,
+    "spo2_pct": 97.86
+   },
+   {
+    "t_offset_min": 15,
+    "ambient_temp_c": 30.75,
+    "relative_humidity_pct": 68.0,
+    "heart_rate_bpm": 83.0,
+    "spo2_pct": 97.85
+   },
+   {
+    "t_offset_min": 16,
+    "ambient_temp_c": 30.8,
+    "relative_humidity_pct": 69.0,
+    "heart_rate_bpm": 83.2,
+    "spo2_pct": 97.84
+   },
+   {
+    "t_offset_min": 17,
+    "ambient_temp_c": 30.85,
+    "relative_humidity_pct": 70.0,
+    "heart_rate_bpm": 83.4,
+    "spo2_pct": 97.83
+   },
+   {
+    "t_offset_min": 18,
+    "ambient_temp_c": 30.9,
+    "relative_humidity_pct": 71.0,
+    "heart_rate_bpm": 83.6,
+    "spo2_pct": 97.82
+   },
+   {
+    "t_offset_min": 19,
+    "ambient_temp_c": 30.95,
+    "relative_humidity_pct": 72.0,
+    "heart_rate_bpm": 83.8,
+    "spo2_pct": 97.81
+   },
+   {
+    "t_offset_min": 20,
+    "ambient_temp_c": 31.0,
+    "relative_humidity_pct": 73.0,
+    "heart_rate_bpm": 84.0,
+    "spo2_pct": 97.8
+   },
+   {
+    "t_offset_min": 21,
+    "ambient_temp_c": 31.05,
+    "relative_humidity_pct": 67.0,
+    "heart_rate_bpm": 84.2,
+    "spo2_pct": 97.79
+   },
+   {
+    "t_offset_min": 22,
+    "ambient_temp_c": 31.1,
+    "relative_humidity_pct": 68.0,
+    "heart_rate_bpm": 84.4,
+    "spo2_pct": 97.78
+   },
+   {
+    "t_offset_min": 23,
+    "ambient_temp_c": 31.15,
+    "relative_humidity_pct": 69.0,
+    "heart_rate_bpm": 84.6,
+    "spo2_pct": 97.77
+   },
+   {
+    "t_offset_min": 24,
+    "ambient_temp_c": 31.2,
+    "relative_humidity_pct": 70.0,
+    "heart_rate_bpm": 84.8,
+    "spo2_pct": 97.76
+   },
+   {
+    "t_offset_min": 25,
+    "ambient_temp_c": 31.25,
+    "relative_humidity_pct": 71.0,
+    "heart_rate_bpm": 85.0,
+    "spo2_pct": 97.75
+   },
+   {
+    "t_offset_min": 26,
+    "ambient_temp_c": 31.3,
+    "relative_humidity_pct": 72.0,
+    "heart_rate_bpm": 85.2,
+    "spo2_pct": 97.74
+   },
+   {
+    "t_offset_min": 27,
+    "ambient_temp_c": 31.35,
+    "relative_humidity_pct": 73.0,
+    "heart_rate_bpm": 85.4,
+    "spo2_pct": 97.73
+   },
+   {
+    "t_offset_min": 28,
+    "ambient_temp_c": 31.4,
+    "relative_humidity_pct": 67.0,
+    "heart_rate_bpm": 85.6,
+    "spo2_pct": 97.72
+   },
+   {
+    "t_offset_min": 29,
+    "ambient_temp_c": 31.45,
+    "relative_humidity_pct": 68.0,
+    "heart_rate_bpm": 85.8,
+    "spo2_pct": 97.71
+   },
+   {
+    "t_offset_min": 30,
+    "ambient_temp_c": 31.5,
+    "relative_humidity_pct": 69.0,
+    "heart_rate_bpm": 86.0,
+    "spo2_pct": 97.7
+   },
+   {
+    "t_offset_min": 31,
+    "ambient_temp_c": 31.55,
+    "relative_humidity_pct": 70.0,
+    "heart_rate_bpm": 86.2,
+    "spo2_pct": 97.69
+   },
+   {
+    "t_offset_min": 32,
+    "ambient_temp_c": 31.6,
+    "relative_humidity_pct": 71.0,
+    "heart_rate_bpm": 86.4,
+    "spo2_pct": 97.68
+   },
+   {
+    "t_offset_min": 33,
+    "ambient_temp_c": 31.65,
+    "relative_humidity_pct": 72.0,
+    "heart_rate_bpm": 86.6,
+    "spo2_pct": 97.67
+   },
+   {
+    "t_offset_min": 34,
+    "ambient_temp_c": 31.7,
+    "relative_humidity_pct": 73.0,
+    "heart_rate_bpm": 86.8,
+    "spo2_pct": 97.66
+   },
+   {
+    "t_offset_min": 35,
+    "ambient_temp_c": 31.75,
+    "relative_humidity_pct": 67.0,
+    "heart_rate_bpm": 87.0,
+    "spo2_pct": 97.65
+   },
+   {
+    "t_offset_min": 36,
+    "ambient_temp_c": 31.8,
+    "relative_humidity_pct": 68.0,
+    "heart_rate_bpm": 87.2,
+    "spo2_pct": 97.64
+   },
+   {
+    "t_offset_min": 37,
+    "ambient_temp_c": 31.85,
+    "relative_humidity_pct": 69.0,
+    "heart_rate_bpm": 87.4,
+    "spo2_pct": 97.63
+   },
+   {
+    "t_offset_min": 38,
+    "ambient_temp_c": 31.9,
+    "relative_humidity_pct": 70.0,
+    "heart_rate_bpm": 87.6,
+    "spo2_pct": 97.62
+   },
+   {
+    "t_offset_min": 39,
+    "ambient_temp_c": 31.95,
+    "relative_humidity_pct": 71.0,
+    "heart_rate_bpm": 87.8,
+    "spo2_pct": 97.61
+   },
+   {
+    "t_offset_min": 40,
+    "ambient_temp_c": 32.0,
+    "relative_humidity_pct": 72.0,
+    "heart_rate_bpm": 88.0,
+    "spo2_pct": 97.6
+   },
+   {
+    "t_offset_min": 41,
+    "ambient_temp_c": 32.05,
+    "relative_humidity_pct": 73.0,
+    "heart_rate_bpm": 88.2,
+    "spo2_pct": 97.59
+   },
+   {
+    "t_offset_min": 42,
+    "ambient_temp_c": 32.1,
+    "relative_humidity_pct": 67.0,
+    "heart_rate_bpm": 88.4,
+    "spo2_pct": 97.58
+   },
+   {
+    "t_offset_min": 43,
+    "ambient_temp_c": 32.15,
+    "relative_humidity_pct": 68.0,
+    "heart_rate_bpm": 88.6,
+    "spo2_pct": 97.57
+   },
+   {
+    "t_offset_min": 44,
+    "ambient_temp_c": 32.2,
+    "relative_humidity_pct": 69.0,
+    "heart_rate_bpm": 88.8,
+    "spo2_pct": 97.56
+   },
+   {
+    "t_offset_min": 45,
+    "ambient_temp_c": 32.25,
+    "relative_humidity_pct": 70.0,
+    "heart_rate_bpm": 89.0,
+    "spo2_pct": 97.55
+   },
+   {
+    "t_offset_min": 46,
+    "ambient_temp_c": 32.3,
+    "relative_humidity_pct": 71.0,
+    "heart_rate_bpm": 89.2,
+    "spo2_pct": 97.54
+   },
+   {
+    "t_offset_min": 47,
+    "ambient_temp_c": 32.35,
+    "relative_humidity_pct": 72.0,
+    "heart_rate_bpm": 89.4,
+    "spo2_pct": 97.53
+   },
+   {
+    "t_offset_min": 48,
+    "ambient_temp_c": 32.4,
+    "relative_humidity_pct": 73.0,
+    "heart_rate_bpm": 89.6,
+    "spo2_pct": 97.52
+   },
+   {
+    "t_offset_min": 49,
+    "ambient_temp_c": 32.45,
+    "relative_humidity_pct": 67.0,
+    "heart_rate_bpm": 89.8,
+    "spo2_pct": 97.51
+   },
+   {
+    "t_offset_min": 50,
+    "ambient_temp_c": 32.5,
+    "relative_humidity_pct": 68.0,
+    "heart_rate_bpm": 90.0,
+    "spo2_pct": 97.5
+   },
+   {
+    "t_offset_min": 51,
+    "ambient_temp_c": 32.55,
+    "relative_humidity_pct": 69.0,
+    "heart_rate_bpm": 90.2,
+    "spo2_pct": 97.49
+   },
+   {
+    "t_offset_min": 52,
+    "ambient_temp_c": 32.6,
+    "relative_humidity_pct": 70.0,
+    "heart_rate_bpm": 90.4,
+    "spo2_pct": 97.48
+   },
+   {
+    "t_offset_min": 53,
+    "ambient_temp_c": 32.65,
+    "relative_humidity_pct": 71.0,
+    "heart_rate_bpm": 90.6,
+    "spo2_pct": 97.47
+   },
+   {
+    "t_offset_min": 54,
+    "ambient_temp_c": 32.7,
+    "relative_humidity_pct": 72.0,
+    "heart_rate_bpm": 90.8,
+    "spo2_pct": 97.46
+   },
+   {
+    "t_offset_min": 55,
+    "ambient_temp_c": 32.75,
+    "relative_humidity_pct": 73.0,
+    "heart_rate_bpm": 91.0,
+    "spo2_pct": 97.45
+   },
+   {
+    "t_offset_min": 56,
+    "ambient_temp_c": 32.8,
+    "relative_humidity_pct": 67.0,
+    "heart_rate_bpm": 91.2,
+    "spo2_pct": 97.44
+   },
+   {
+    "t_offset_min": 57,
+    "ambient_temp_c": 32.85,
+    "relative_humidity_pct": 68.0,
+    "heart_rate_bpm": 91.4,
+    "spo2_pct": 97.43
+   },
+   {
+    "t_offset_min": 58,
+    "ambient_temp_c": 32.9,
+    "relative_humidity_pct": 69.0,
+    "heart_rate_bpm": 91.6,
+    "spo2_pct": 97.42
+   },
+   {
+    "t_offset_min": 59,
+    "ambient_temp_c": 32.95,
+    "relative_humidity_pct": 70.0,
+    "heart_rate_bpm": 91.8,
+    "spo2_pct": 97.41
+   },
+   {
+    "t_offset_min": 60,
+    "ambient_temp_c": 33.0,
+    "relative_humidity_pct": 71.0,
+    "heart_rate_bpm": 92.0,
+    "spo2_pct": 97.4
+   },
+   {
+    "t_offset_min": 61,
+    "ambient_temp_c": 33.05,
+    "relative_humidity_pct": 72.0,
+    "heart_rate_bpm": 92.2,
+    "spo2_pct": 97.39
+   },
+   {
+    "t_offset_min": 62,
+    "ambient_temp_c": 33.1,
+    "relative_humidity_pct": 73.0,
+    "heart_rate_bpm": 92.4,
+    "spo2_pct": 97.38
+   },
+   {
+    "t_offset_min": 63,
+    "ambient_temp_c": 33.15,
+    "relative_humidity_pct": 67.0,
+    "heart_rate_bpm": 92.6,
+    "spo2_pct": 97.37
+   },
+   {
+    "t_offset_min": 64,
+    "ambient_temp_c": 33.2,
+    "relative_humidity_pct": 68.0,
+    "heart_rate_bpm": 92.8,
+    "spo2_pct": 97.36
+   },
+   {
+    "t_offset_min": 65,
+    "ambient_temp_c": 33.25,
+    "relative_humidity_pct": 69.0,
+    "heart_rate_bpm": 93.0,
+    "spo2_pct": 97.35
+   },
+   {
+    "t_offset_min": 66,
+    "ambient_temp_c": 33.3,
+    "relative_humidity_pct": 70.0,
+    "heart_rate_bpm": 93.2,
+    "spo2_pct": 97.34
+   },
+   {
+    "t_offset_min": 67,
+    "ambient_temp_c": 33.35,
+    "relative_humidity_pct": 71.0,
+    "heart_rate_bpm": 93.4,
+    "spo2_pct": 97.33
+   },
+   {
+    "t_offset_min": 68,
+    "ambient_temp_c": 33.4,
+    "relative_humidity_pct": 72.0,
+    "heart_rate_bpm": 93.6,
+    "spo2_pct": 97.32
+   },
+   {
+    "t_offset_min": 69,
+    "ambient_temp_c": 33.45,
+    "relative_humidity_pct": 73.0,
+    "heart_rate_bpm": 93.8,
+    "spo2_pct": 97.31
+   },
+   {
+    "t_offset_min": 70,
+    "ambient_temp_c": 33.5,
+    "relative_humidity_pct": 67.0,
+    "heart_rate_bpm": 94.0,
+    "spo2_pct": 97.3
+   },
+   {
+    "t_offset_min": 71,
+    "ambient_temp_c": 33.55,
+    "relative_humidity_pct": 68.0,
+    "heart_rate_bpm": 94.2,
+    "spo2_pct": 97.29
+   },
+   {
+    "t_offset_min": 72,
+    "ambient_temp_c": 33.6,
+    "relative_humidity_pct": 69.0,
+    "heart_rate_bpm": 94.4,
+    "spo2_pct": 97.28
+   },
+   {
+    "t_offset_min": 73,
+    "ambient_temp_c": 33.65,
+    "relative_humidity_pct": 70.0,
+    "heart_rate_bpm": 94.6,
+    "spo2_pct": 97.27
+   },
+   {
+    "t_offset_min": 74,
+    "ambient_temp_c": 33.7,
+    "relative_humidity_pct": 71.0,
+    "heart_rate_bpm": 94.8,
+    "spo2_pct": 97.26
+   },
+   {
+    "t_offset_min": 75,
+    "ambient_temp_c": 33.75,
+    "relative_humidity_pct": 72.0,
+    "heart_rate_bpm": 95.0,
+    "spo2_pct": 97.25
+   },
+   {
+    "t_offset_min": 76,
+    "ambient_temp_c": 33.8,
+    "relative_humidity_pct": 73.0,
+    "heart_rate_bpm": 95.2,
+    "spo2_pct": 97.24
+   },
+   {
+    "t_offset_min": 77,
+    "ambient_temp_c": 33.85,
+    "relative_humidity_pct": 67.0,
+    "heart_rate_bpm": 95.4,
+    "spo2_pct": 97.23
+   },
+   {
+    "t_offset_min": 78,
+    "ambient_temp_c": 33.9,
+    "relative_humidity_pct": 68.0,
+    "heart_rate_bpm": 95.6,
+    "spo2_pct": 97.22
+   },
+   {
+    "t_offset_min": 79,
+    "ambient_temp_c": 33.95,
+    "relative_humidity_pct": 69.0,
+    "heart_rate_bpm": 95.8,
+    "spo2_pct": 97.21
+   },
+   {
+    "t_offset_min": 80,
+    "ambient_temp_c": 34.0,
+    "relative_humidity_pct": 70.0,
+    "heart_rate_bpm": 96.0,
+    "spo2_pct": 97.2
+   },
+   {
+    "t_offset_min": 81,
+    "ambient_temp_c": 34.05,
+    "relative_humidity_pct": 71.0,
+    "heart_rate_bpm": 96.2,
+    "spo2_pct": 97.19
+   },
+   {
+    "t_offset_min": 82,
+    "ambient_temp_c": 34.1,
+    "relative_humidity_pct": 72.0,
+    "heart_rate_bpm": 96.4,
+    "spo2_pct": 97.18
+   },
+   {
+    "t_offset_min": 83,
+    "ambient_temp_c": 34.15,
+    "relative_humidity_pct": 73.0,
+    "heart_rate_bpm": 96.6,
+    "spo2_pct": 97.17
+   },
+   {
+    "t_offset_min": 84,
+    "ambient_temp_c": 34.2,
+    "relative_humidity_pct": 67.0,
+    "heart_rate_bpm": 96.8,
+    "spo2_pct": 97.16
+   },
+   {
+    "t_offset_min": 85,
+    "ambient_temp_c": 34.25,
+    "relative_humidity_pct": 68.0,
+    "heart_rate_bpm": 97.0,
+    "spo2_pct": 97.15
+   },
+   {
+    "t_offset_min": 86,
+    "ambient_temp_c": 34.3,
+    "relative_humidity_pct": 69.0,
+    "heart_rate_bpm": 97.2,
+    "spo2_pct": 97.14
+   },
+   {
+    "t_offset_min": 87,
+    "ambient_temp_c": 34.35,
+    "relative_humidity_pct": 70.0,
+    "heart_rate_bpm": 97.4,
+    "spo2_pct": 97.13
+   },
+   {
+    "t_offset_min": 88,
+    "ambient_temp_c": 34.4,
+    "relative_humidity_pct": 71.0,
+    "heart_rate_bpm": 97.6,
+    "spo2_pct": 97.12
+   },
+   {
+    "t_offset_min": 89,
+    "ambient_temp_c": 34.45,
+    "relative_humidity_pct": 72.0,
+    "heart_rate_bpm": 97.8,
+    "spo2_pct": 97.11
+   }
+  ],
+  "expected_features": {
+   "mean.ambient_temp_c_5": 34.35,
+   "sd.ambient_temp_c_5": 0.079057,
+   "grad.ambient_temp_c_5": 0.04,
+   "mean.ambient_temp_c_15": 34.1,
+   "sd.ambient_temp_c_15": 0.223607,
+   "grad.ambient_temp_c_15": 0.046667,
+   "mean.ambient_temp_c_60": 32.975,
+   "sd.ambient_temp_c_60": 0.873212,
+   "grad.ambient_temp_c_60": 0.049167,
+   "mean.relative_humidity_pct_5": 70.0,
+   "sd.relative_humidity_pct_5": 1.581139,
+   "grad.relative_humidity_pct_5": 0.8,
+   "mean.relative_humidity_pct_15": 70.133333,
+   "sd.relative_humidity_pct_15": 2.065591,
+   "grad.relative_humidity_pct_15": 0.0,
+   "mean.relative_humidity_pct_60": 70.033333,
+   "sd.relative_humidity_pct_60": 1.974126,
+   "grad.relative_humidity_pct_60": 0.05,
+   "mean.heart_rate_bpm_5": 97.4,
+   "sd.heart_rate_bpm_5": 0.316228,
+   "grad.heart_rate_bpm_5": 0.16,
+   "mean.heart_rate_bpm_15": 96.4,
+   "sd.heart_rate_bpm_15": 0.894427,
+   "grad.heart_rate_bpm_15": 0.186667,
+   "mean.heart_rate_bpm_60": 91.9,
+   "sd.heart_rate_bpm_60": 3.49285,
+   "grad.heart_rate_bpm_60": 0.196667,
+   "mean.spo2_pct_5": 97.13,
+   "sd.spo2_pct_5": 0.015811,
+   "grad.spo2_pct_5": -0.008,
+   "mean.spo2_pct_15": 97.18,
+   "sd.spo2_pct_15": 0.044721,
+   "grad.spo2_pct_15": -0.009333,
+   "mean.spo2_pct_60": 97.405,
+   "sd.spo2_pct_60": 0.174642,
+   "grad.spo2_pct_60": -0.009833
+  }
+ }
+}
