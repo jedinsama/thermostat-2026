@@ -1,0 +1,22 @@
+# Datasets and derived telemetry — never committed.
+# The ethics protocol names three permitted locations; a repo is not one.
+data/raw/
+data/clean/
+sessions/
+results/
+
+# Participant-coded files, wherever they appear
+P-[0-9][0-9]_*.csv
+D-[0-9][0-9]_*.csv
+
+# Environments and caches
+.venv/
+__pycache__/
+*.pyc
+
+# Trained on synthetic pairings — must never be mistaken for a real model
+app/assets/model.pathb_test.json
+
+# Manuscript and ethics working documents.
+# Contains draft material and third-party correspondence.
+docs/
