@@ -1,0 +1,12 @@
+# THERMOSTAT MLOps dependencies.
+#
+#     python3 -m venv .venv
+#     source .venv/bin/activate
+#     pip install -r requirements.txt
+#
+# Loose lower bounds: nothing here uses recent-only APIs.
+# Verified running on pandas 3.0.2 / numpy 2.4.4 / scikit-learn 1.8.0.
+
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
