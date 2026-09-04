@@ -1,0 +1,33 @@
+name: thermostat
+description: "THERMOSTAT — personalized heat stroke risk prediction and mitigation."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.2
+  flutter_blue_plus: ^1.32.7
+  shared_preferences: ^2.2.3
+  path_provider: ^2.1.3
+  flutter_file_dialog: ^3.0.2
+  url_launcher: ^6.2.6
+  geolocator: ^12.0.0
+  flutter_ringtone_player: ^4.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    # Directory form: a missing model.json must not break the build, because
+    # running without a trained model is a supported state (rule engine only).
+    # export_model_dart.py writes assets/model.json; model.example.json ships
+    # so the pipeline is demonstrable before Phase 2 data exists.
+    - assets/
