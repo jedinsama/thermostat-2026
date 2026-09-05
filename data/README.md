@@ -3,8 +3,7 @@
 **Raw dataset files are deliberately NOT committed to this repository.**
 They are large (PPG-DaLiA is 2.7 GB) and separately licensed. This file gives
 the DOI and the exact steps for each, so anyone can reproduce our pipeline
-from scratch. Committing the recipe rather than the ingredients is the correct
-practice, and it is what keeps the repo usable.
+from scratch.
 
 **Participant telemetry from our own study is NEVER committed here.** Our
 ethics protocol names exactly three places research data may live, and a

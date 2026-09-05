@@ -188,7 +188,7 @@ third-party correspondence.
 | **Sophia E. Tolosa** | Machine learning and research |
 | **Ria Jeanel Dagalea** | Hardware and firmware |
 
-Adviser: Engr. Elvin Rey S.G. Saavedra
+Adviser: Elvin Rey S.G. Saavedra
 Course instructor: Jason A. Catadman
 College of Computing Studies, Western Mindanao State University
 
