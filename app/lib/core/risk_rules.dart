@@ -1,15 +1,36 @@
-/// THERMOSTAT rule-based risk engine — Dart port of analysis/labeling.py.
+/// THERMOSTAT rule-based risk engine — Dart port of mlops/labeling.py.
 ///
 /// The canonical implementation is labeling.py; this port must agree with it.
-/// If you change a threshold here, change it there and re-run both self-tests
-/// (mlops/sync check). Bands: 0 Safe · 1 Caution · 2 Extreme Caution ·
-/// 3 Danger · 4 Extreme Danger (PAGASA naming).
+/// If you change a threshold here, change it there and re-run both self-tests:
+///
+///     cd mlops && python verify_dart_parity.py && cp golden_vectors.json ../app/test/
+///     cd ../app && flutter test test/parity_test.dart
+///
+/// Bands: 0 Safe · 1 Caution · 2 Extreme Caution · 3 Danger ·
+/// 4 Extreme Danger (PAGASA naming).
 library risk_rules;
 
 import 'dart:math' as math;
 
 const riskNames = ['Safe', 'Caution', 'Extreme Caution', 'Danger', 'Extreme Danger'];
 const int kDangerBand = 3;
+
+/// Cap on the total personalized vulnerability bump, in bands.
+///
+/// MUST equal MAX_ESCALATION in mlops/labeling.py. It is named here rather
+/// than inlined so that a change on the Python side has one obvious place to
+/// land on this side; a hard-coded literal is how the two implementations
+/// drift apart without anyone noticing.
+const int kMaxEscalation = 1;
+
+/// Tighter cap applied at the top of the scale (base >= 3).
+///
+/// When conditions are already Danger for everyone, further personalized
+/// escalation pins every vulnerable user at Extreme Danger all day —
+/// clinically implausible, and useless as a training signal. Personalization
+/// carries the most information in the MIDDLE bands, where a generic
+/// heat-index system tells a vulnerable person they are fine and they are not.
+const int kMaxEscalationAtDanger = 1;
 
 class UserProfile {
   final String userId; // participant code in research; display name in product
@@ -107,6 +128,13 @@ int pagasaRiskClass(double hiC) {
 }
 
 /// Heart-rate-only Physiological Strain Index, 0–10 (Moran et al., 1998).
+///
+/// PSI = 5 * (HR_t − HR_rest) / (HR_max − HR_rest)
+///
+/// The denominator is where personalization enters the system: identical
+/// telemetry yields a different strain band for a 20-year-old and a
+/// 70-year-old, because HR_max follows Tanaka and HR_rest is measured at
+/// enrollment.
 double psiHeartRate(double hrBpm, UserProfile p) {
   if (hrBpm.isNaN) return double.nan;
   final psi = 5.0 * (hrBpm - p.restingHrBpm) / p.hrReserve;
@@ -122,8 +150,18 @@ int psiRiskClass(double psi) {
   return 4;
 }
 
-/// Fusion rule — mirrors labeling.py exactly, including the graduated
-/// escalation cap (MAX_ESCALATION=1; tighter cap of 1 when base ≥ 3).
+/// Fusion rule — mirrors fuse_risk() in mlops/labeling.py exactly.
+///
+///     base = max(envClass, psiClass)
+///     +1 if cardiovascular condition AND envClass >= 2
+///     +1 if BMI >= 30                AND envClass >= 2
+///     +1 if age >= 65 or <= 12
+///     +1 if sustained SpO2 desaturation
+///     escalation capped, then clamped to [0, 4]
+///
+/// Comorbidity and obesity are gated on envClass >= 2 because they amplify
+/// heat vulnerability rather than create risk in a cool environment. Age and
+/// desaturation are ungated.
 int fuseRisk(int envClass, int psiClass, UserProfile p, {bool spo2Desat = false}) {
   if (envClass < 0 && psiClass < 0) return -1;
   final base = math.max(envClass, psiClass);
@@ -132,8 +170,13 @@ int fuseRisk(int envClass, int psiClass, UserProfile p, {bool spo2Desat = false}
   if (p.isObese && envClass >= 2) esc += 1;
   if (p.isAgeVulnerable) esc += 1;
   if (spo2Desat) esc += 1;
-  final cap = base <= 2 ? 1 : 1; // MAX_ESCALATION = 1, graduated form kept
+
+  // Matches `effective_cap = MAX_ESCALATION if base <= 2 else 1` in
+  // labeling.py. Both constants are 1 today; they are named separately so the
+  // graduated form survives a change to either.
+  final cap = base <= 2 ? kMaxEscalation : kMaxEscalationAtDanger;
   esc = math.min(esc, cap);
+
   return (base + esc).clamp(0, 4);
 }
 
